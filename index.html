@@ -32,7 +32,7 @@
             padding-top: 2rem;
             padding-bottom: 4rem;
 
-            /* --- 1. Animated Gradient Background --- */
+            /* Animated gradient background */
             background: linear-gradient(315deg, #3a1f47, #1a1a2e, #1f3a47, #2e1a3a, #1a2e3a);
             background-size: 400% 400%;
             animation: gradient-animation 15s ease infinite;
@@ -45,14 +45,7 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* --- Header: Logo & One-Liner --- */
-        .header-logo {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #ffffff;
-            text-decoration: none;
-        }
-        
+        /* --- Header --- */
         .header-tagline {
             font-size: 1.15rem;
             font-weight: 300;
@@ -61,61 +54,22 @@
 
         /* --- Project Card Styling --- */
         .project-card {
-            background-color: #1e1e1e; /* Slightly lighter card */
-            border-radius: 0.75rem; /* Rounded corners */
+            background-color: #1e1e1e;
+            border-radius: 0.75rem;
             border: 1px solid #333;
             overflow: hidden;
             margin-bottom: 2rem;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-
-            /* --- 2. Removed transitions for hover effect --- */
         }
 
-        /* --- 2. Removed lift effect on hover --- */
-
-        /* --- Image Hover Effect (as per wireframe) --- */
         .project-image-container {
             position: relative;
-            cursor: pointer;
         }
 
         .project-image {
             display: block;
             width: 100%;
             height: auto;
-            transition: opacity 0.3s ease;
-        }
-
-        /* Overlay for DESKTOP hover */
-        .project-image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.7); /* Dim effect */
-            color: white;
-            /* Use d-none and d-lg-flex to show ONLY on large screens */
-            display: none; 
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 1rem;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        /* Show overlay on desktop hover */
-        @media (min-width: 992px) {
-            .project-image-overlay {
-                display: flex; /* Re-enable for large screens */
-            }
-            .project-image-container:hover .project-image {
-                opacity: 0.4; /* Dim the image */
-            }
-            .project-image-container:hover .project-image-overlay {
-                opacity: 1; /* Show the text */
-            }
         }
 
         /* Card body for text and player */
@@ -123,14 +77,7 @@
             padding: 1.5rem;
         }
 
-        .project-title {
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: #ffffff;
-            margin-bottom: 0.5rem;
-        }
-        
-        /* This is the text from the overlay, shown ONLY on mobile/tablet */
+        /* Project description text, visible on all devices */
         .project-details-mobile {
             color: #adb5bd;
             font-size: 0.95rem;
@@ -198,7 +145,7 @@
             transition: width 0.1s linear; /* Smooth update */
         }
 
-        /* --- Project-specific Links (as per wireframe) --- */
+        /* --- Project Links --- */
         .project-links {
             justify-content: center;
         }
@@ -216,13 +163,7 @@
             color: #ffffff;
         }
 
-        /* --- About Section & Footer --- */
-        .about-section {
-            border-top: 1px solid #444;
-            padding-top: 2rem;
-            margin-top: 1rem;
-        }
-        
+        /* --- Footer --- */
         .footer-social-links .icon-link {
             font-size: 2rem;
             color: #adb5bd;
@@ -232,6 +173,59 @@
         
         .footer-social-links .icon-link:hover {
             color: #ffffff;
+        }
+
+        /* --- CTA / Hire Me Section --- */
+        .cta-section {
+            border-top: 1px solid #444;
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+            margin-top: 1rem;
+        }
+
+        .cta-heading {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.75rem 2.5rem;
+            background-color: transparent;
+            border: 1px solid #adb5bd;
+            color: #f0f0f0;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            margin-top: 0.5rem;
+        }
+
+        .cta-button:hover {
+            background-color: #f0f0f0;
+            color: #1a1a2e;
+        }
+
+        /* --- Project Quote (always-visible testimonial) --- */
+        .project-quote {
+            border-left: 3px solid #555;
+            padding: 0.25rem 1rem;
+            margin: 1rem 0 0.5rem;
+            color: #adb5bd;
+            font-size: 0.86rem;
+            font-style: italic;
+        }
+
+        .project-quote cite {
+            display: block;
+            margin-top: 0.5rem;
+            font-style: normal;
+            font-weight: 500;
+            color: #888;
+            font-size: 0.86rem;
         }
         
     </style>
@@ -247,51 +241,38 @@
                              width="220" 
                              style="margin-bottom: 10px">
                 <p class="header-tagline">Synth sorcerer &amp; hybrid-orchestral brewmaster</p>
+
             </div>
         </div>
     </header>
     
-            <div class="row">
-                <section class="text-center px-4 px-md-5">
-                    <p>
-                        Hi! I craft emotive, immersive, and sometimes tear-jerking music for games. My goal is to compose unforgettable music: delivering bombastic fanfares, delicate leitmotifs, and soaring overtures. Check out my work below!
-                    </p>
-                </section>
-        </div>
-    <br>
-    
-
     <!-- Main Portfolio Section -->
     <main class="container">
         <!-- DD3 Row (above 2x2 grid) -->
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" style="margin-top: 1em">
             <div class="col-12 col-md-8">
                 <div class="project-card">
-                    <!-- Image with Hover Effect -->
+                    <!-- Project image -->
                     <div class="project-image-container">
-                        <img src="/dd3.png"
-                             alt="DD3 Screenshot"
+                        <img src="/DD3.png"
+                             alt="Dark Deity 3"
                              class="project-image"
                              style="aspect-ratio: 16/9; object-fit: cover;">
-                        <!-- This overlay is HIDDEN on mobile/tablet (d-none) and SHOWN on desktop (d-lg-flex) -->
-                        <div class="project-image-overlay d-none d-lg-flex">
-                            <div>
-                                <p>I'm currently composing the soundtrack for the highly-anticipated ending to the Dark Deity trilogy. More to come!</p>
-                            </div>
-                        </div>
+
                     </div>
 
-                    <!-- Card Body: Links (no audio) -->
+                    <!-- Card body -->
                     <div class="project-card-body">
-                        <!-- This text is SHOWN on mobile/tablet (d-lg-none) and HIDDEN on desktop -->
-                        <div class="project-details-mobile d-lg-none">
-                            <p>I'm currently composing the soundtrack for the highly-anticipated ending to the Dark Deity trilogy. More to come!</p>
+                        <!-- Project description -->
+                        <div class="project-details-mobile">
+                            <p class="header-tagline" style="text-align: center;"><strong>Currently Brewing...</strong></p>
+                            <p>I'm composing the full soundtrack for Dark Deity 3, the highly-anticipated conclusion to the Dark Deity trilogy. More to come!</p>
                         </div>
 
-                        <!-- Project-specific links (copied from Dark Deity 2) -->
+                        <!-- Project links -->
                         <div class="project-links d-flex gap-3 mt-3">
                             <a href="https://darkdeitygame.com/" class="icon-link" title="Website"><i class="bi bi-globe"></i></a>
-                            <a href="https://youtu.be/-PLtBEZgN40?si=CZtvCm2gx0GwSiWI" class="icon-link" title="YouTube"><i class="bi bi-youtube"></i></a>
+                            <a href="https://youtu.be/-PLtBEZgN40?si=1UFVko3qD0xMXVv2" class="icon-link" title="YouTube"><i class="bi bi-youtube"></i></a>
                             <a href="https://store.steampowered.com/app/4576910/Dark_Deity_3/" class="icon-link" title="Steam Page"><i class="bi bi-steam"></i></a>
                         </div>
                     </div>
@@ -306,27 +287,24 @@
             <!-- Project 1 (Stacks on mobile) -->
             <div class="col-12 col-md-6">
                 <div class="project-card">
-                    <!-- Image with Hover Effect -->
+                    <!-- Project image -->
                     <div class="project-image-container">
                         <img src="/DD2.png" 
-                             alt="Project 1 Screenshot" 
+                             alt="Dark Deity 2" 
                              class="project-image">
-                        <!-- This overlay is HIDDEN on mobile/tablet (d-none) and SHOWN on desktop (d-lg-flex) -->
-                        <div class="project-image-overlay d-none d-lg-flex">
-                            <div>
-                                <p>From nostalgic melodica motifs to foreboding synth punctuations, from shimmery guitar ornamentation to visceral throat singing, I used a huge variety of arranging and recording techniques for the 48-track soundtrack of Dark Deity 2.</p>
-                                <p><em>"The one area that’s not in question is the music; it’s absolutely fantastic. Every track flows seamlessly between player and enemy phases, as well as into combat, and it’s all top-notch."</em><br>— <strong>Ian McBride (Noisy Pixel)</strong></p>
-                            </div>
-                        </div>
                     </div>
                     
-                    <!-- Card Body: Title, Audio, Links -->
+                    <!-- Card body -->
                     <div class="project-card-body">                        
-                        <!-- This text is SHOWN on mobile/tablet (d-lg-none) and HIDDEN on desktop -->
-                        <div class="project-details-mobile d-lg-none">
-                            <p>From nostalgic melodica motifs to foreboding synth punctuations, from shimmery guitar ornamentation to visceral throat singing, I used a huge variety of arranging and recording techniques for the 48-track soundtrack of DD2.</p>
-                            <p><em>"The one area that’s not in question is the music; it’s absolutely fantastic. Every track flows seamlessly between player and enemy phases, as well as into combat, and it’s all top-notch."</em><br>— <strong>Ian McBride (Noisy Pixel)</strong></p>
+                        <!-- Project description -->
+                        <div class="project-details-mobile">
+                            <p>Dark Deity 2 called for a 48-track score with music that transitions seamlessly between phases. I mixed live guitar and melodica with soaring orchestral instruments to give the world its sprawling character.</p>
                         </div>
+
+                        <blockquote class="project-quote">
+                            “The music is absolutely fantastic. Every track flows seamlessly between player and enemy phases, as well as into combat, and it’s all top-notch.”
+                            <cite>— Ian McBride, Noisy Pixel</cite>
+                        </blockquote>
 
                         <!-- Custom Audio Player Tracklist -->
                         <ul class="track-list">
@@ -365,7 +343,7 @@
                             </li>
                         </ul>
                         
-                        <!-- Project-specific links (as per wireframe) -->
+                        <!-- Project links -->
                         <div class="project-links d-flex gap-3 mt-3">
                             <a href="https://darkdeitygame.com/" class="icon-link" title="Website"><i class="bi bi-globe"></i></a>
                             <a href="https://youtube.com/playlist?list=PLMgVJNzzvN67jEMTcbqCcsqCnHAX8Iphf&si=sR5I0_3yJc_Ib3rV" class="icon-link" title="YouTube"><i class="bi bi-youtube"></i></a>
@@ -378,26 +356,19 @@
             <!-- Project 2 (Stacks on mobile) -->
             <div class="col-12 col-md-6">
                 <div class="project-card">
-                    <!-- Image with Hover Effect -->
+                    <!-- Project image -->
                     <div class="project-image-container">
                         <img src="/DD.png" 
-                             alt="Project 2 Screenshot" 
+                             alt="Dark Deity" 
                              class="project-image">
-                        <!-- This overlay is HIDDEN on mobile/tablet (d-none) and SHOWN on desktop (d-lg-flex) -->
-                        <div class="project-image-overlay d-none d-lg-flex">
-                            <div>
-                                <p>To forge a distinctive and immersive sonic identity for the world of Dark Deity, I blended visual elements from the character art and map design with the story's thematic beats. Through this, I composed memorable anchor compositions including the main theme and final boss music.</p>
-                                <p>The resulting score drove a compelling experience: Dark Deity now has hundreds of thousands of fans across PC and Nintendo Switch.</p>
-                            </div>
-                        </div>
                     </div>
                     
-                    <!-- Card Body: Title, Audio, Links -->
+                    <!-- Card body -->
                     <div class="project-card-body">                        
-                        <!-- This text is SHOWN on mobile/tablet (d-lg-none) and HIDDEN on desktop -->
-                        <div class="project-details-mobile d-lg-none">
-                            <p>To forge a distinctive and immersive sonic identity for the world of Dark Deity, I blended visual elements from the character art and map design with the story's thematic beats. Through this, I composed memorable anchor compositions including the main theme and final boss music.</p>
-                            <p>The resulting score drove a compelling experience: Dark Deity now has hundreds of thousands of fans across PC and Nintendo Switch.</p>
+                        <!-- Project description -->
+                        <div class="project-details-mobile">
+                            <p>To forge a distinctive, immersive sonic identity for the world of Dark Deity, I created memorable anchor compositions including the main theme and final boss music. I blended visual elements from the character art and map design with the story’s thematic beats.</p>
+                            <p>Through all of this, I helped create a compelling experience: Dark Deity now has hundreds of thousands of fans across PC and Nintendo Switch.</p>
                         </div>
                         
                         <!-- Custom Audio Player Tracklist -->
@@ -437,7 +408,7 @@
                             </li>
                         </ul>
                         
-                        <!-- Project-specific links (as per wireframe) -->
+                        <!-- Project links -->
                         <div class="project-links d-flex gap-3 mt-3">
                             <a href="https://darkdeitygame.com/" class="icon-link" title="Website"><i class="bi bi-globe"></i></a>
                             <a href="https://youtube.com/playlist?list=PLMgVJNzzvN6559g8bMKESDB2op-RZKAbe&si=6zK5VB0DdggUFJSi" class="icon-link" title="YouTube"><i class="bi bi-youtube"></i></a>
@@ -449,30 +420,24 @@
 
         </div> <!-- /row -->
 
-        <!-- --- NEW: Project Row 2 --- -->
+        <!-- Project Row 2 -->
         <div class="row">
             
             <!-- Project 3 (Stacks on mobile) -->
             <div class="col-12 col-md-6">
                 <div class="project-card">
-                    <!-- Image with Hover Effect -->
+                    <!-- Project image -->
                     <div class="project-image-container">
                         <img src="/CC.png" 
-                             alt="Project 3 Screenshot" 
+                             alt="Captain Contraband" 
                              class="project-image">
-                        <!-- This overlay is HIDDEN on mobile/tablet (d-none) and SHOWN on desktop (d-lg-flex) -->
-                        <div class="project-image-overlay d-none d-lg-flex">
-                            <div>
-                                <p>In composing for the high seas, I've had to integrate unique, specialized instrumentation such as the Hurdy-Gurdy and melodeon (accordion). I also developed proficiency in adaptive compositional styles such as state-based stingers.</p>
-                            </div>
-                        </div>
                     </div>
                     
-                    <!-- Card Body: Title, Audio, Links -->
+                    <!-- Card body -->
                     <div class="project-card-body">                        
-                        <!-- This text is SHOWN on mobile/tablet (d-lg-none) and HIDDEN on desktop -->
-                        <div class="project-details-mobile d-lg-none">
-                            <p>In composing for the high seas, I've had to integrate unique, specialized instrumentation such as the Hurdy-Gurdy and melodeon (accordion). I also developed proficiency in adaptive compositional styles such as state-based stingers.</p>
+                        <!-- Project description -->
+                        <div class="project-details-mobile">
+                            <p>In composing for the high seas, I integrated unique, specialized instrumentation such as the Hurdy-Gurdy and melodeon (accordion). I developed proficiency in adaptive compositional styles such as state-based stingers and layered scoring.</p>
                         </div>
 
                         <!-- Custom Audio Player Tracklist -->
@@ -501,7 +466,7 @@
                             </li>
                         </ul>
                         
-                        <!-- Project-specific links (as per wireframe) -->
+                        <!-- Project links -->
                         <div class="project-links d-flex gap-3 mt-3">
                             <a href="https://www.zweihandergames.com/captain-contraband" class="icon-link" title="Website"><i class="bi bi-globe"></i></a>
                             <a href="https://store.steampowered.com/app/986630/Captain_Contraband/" class="icon-link" title="Steam Page"><i class="bi bi-steam"></i></a>
@@ -513,26 +478,18 @@
             <!-- Project 4 (Stacks on mobile) -->
             <div class="col-12 col-md-6">
                 <div class="project-card">
-                    <!-- Image with Hover Effect -->
+                    <!-- Project image -->
                     <div class="project-image-container">
                         <img src="/OoB.png" 
-                             alt="Project 4 Screenshot" 
+                             alt="Out of Beer" 
                              class="project-image">
-                        <!-- This overlay is HIDDEN on mobile/tablet (d-none) and SHOWN on desktop (d-lg-flex) -->
-                        <div class="project-image-overlay d-none d-lg-flex">
-                            <div>
-                                <p>To learn more about game development, I created a side-scrolling platformer from concept to completion, handling the design, code, and soundtrack, of course. I learned how to design a cohesive aesthetic (both sonic and visual) and gained firsthand experience in mastering/implementing audio for games.</p>
-                                <p>The game itself is pretty bad. But the music is cool!</p>
-                            </div>
-                        </div>
                     </div>
                     
-                    <!-- Card Body: Title, Audio, Links -->
+                    <!-- Card body -->
                     <div class="project-card-body">                        
-                        <!-- This text is SHOWN on mobile/tablet (d-lg-none) and HIDDEN on desktop -->
-                        <div class="project-details-mobile d-lg-none">
-                            <p>To learn more about game development, I created a side-scrolling platformer from concept to completion, handling the design, code, and soundtrack, of course. I learned how to design a cohesive aesthetic (both sonic and visual) and gained firsthand experience in mastering/implementing audio for games.</p>
-                            <p>The game itself is pretty bad. But the music is cool!</p>
+                        <!-- Project description -->
+                        <div class="project-details-mobile">
+                            <p>I developed a side-scrolling platformer from concept to completion to learn more about game design, programming, and audio implementation. Handling every step myself gave me a broad view of how music actually lives inside a game.</p>
                         </div>
                         
                         <!-- Custom Audio Player Tracklist -->
@@ -561,7 +518,7 @@
                             </li>
                         </ul>
                         
-                        <!-- Project-specific links (as per wireframe) -->
+                        <!-- Project links -->
                         <div class="project-links d-flex gap-3 mt-3">
                             <a href="https://andyne.itch.io/beer" class="icon-link" title="Website"><i class="bi bi-globe"></i></a>
                             <a href="https://youtu.be/XIAcIVzwiQA?si=loMCwf5zQCPyJVZ8" class="icon-link" title="YouTube"><i class="bi bi-youtube"></i></a>
@@ -571,15 +528,15 @@
             </div>
 
         </div> <!-- /row -->
-        <!-- --- End of new row --- -->
+        
 
-        <!-- About Section -->
+        <!-- CTA / Hire Me Section -->
         <div class="row">
             <div class="col-12 col-lg-10 offset-lg-1">
-                <section class="about-section text-center px-md-5">
-                    <p>
-                        I hope you enjoyed looking through my projects and listening to my sample tracks! I love scoring with the organic imperfection of analog, hardware synths and custom recording my own strings and guitar. Don't hesitate to reach out if you have any questions: <a href="mailto:andynemusic@gmail.com" title="Mail" style="color: #B0E0E6; text-decoration: none;"><em>andynemusic@gmail.com</em></a>. Cheers!
-                    </p>
+                <section class="cta-section text-center px-md-5">
+                    <h2 class="cta-heading">Let's Work Together</h2>
+                    <p>I’m open for work on new projects and love collaborating with teams that take their audio seriously — whether you need a full, original score or select tracks to anchor a world, don’t hesitate to reach out!</p>
+                    <a href="mailto:andynemusic@gmail.com" class="cta-button">Get in Touch</a>
                 </section>
             </div>
         </div>
@@ -590,13 +547,15 @@
     <footer class="container text-center mt-4">
         <div class="footer-social-links d-flex justify-content-center flex-wrap gap-4">
             <a href="mailto:andynemusic@gmail.com" class="icon-link" title="Mail"><i class="bi bi-envelope"></i></a>
+            <a href="https://discord.com/users/540794694452641792" class="icon-link" title="Discord"><i class="bi bi-discord"></i></a>
+            <a href="https://andyne.bandcamp.com/" class="icon-link" title="Bandcamp"><i class="bi bi-disc"></i></a>
             <a href="https://www.youtube.com/@andynemusic" class="icon-link" title="YouTube"><i class="bi bi-youtube"></i></a>
             <a href="https://x.com/andynemusic" class="icon-link" title="Twitter/X"><i class="bi bi-twitter-x"></i></a>
             <a href="https://www.instagram.com/andynemusic/" class="icon-link" title="Instagram"><i class="bi bi-instagram"></i></a>
             <a href="https://open.spotify.com/artist/3uI2cxgyDU4QKuFCx8Nf3d?si=glGqE8DNRU-m3EUnSTy06w" class="icon-link" title="Spotify"><i class="bi bi-spotify"></i></a>
         </div>
         <br>
-        <p>&copy; 2026 Soaring Soundworks</p>
+        <p>&copy; 2026 <strong>Andyne</strong> <em>(Soaring Soundworks)</em></p>
     </footer>
 
     <!-- Bootstrap JS Bundle -->
@@ -607,7 +566,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             const allPlayButtons = document.querySelectorAll('.play-pause-btn');
             const allAudioElements = document.querySelectorAll('.track-audio');
-            const allProgressBars = document.querySelectorAll('.progress-bar');
 
             // Object to store playback positions for each track
             const trackPositions = {};
@@ -657,7 +615,6 @@
             allAudioElements.forEach(audio => {
                 // Ensure metadata is loaded before setting up progress tracking
                 audio.addEventListener('loadedmetadata', () => {
-                    console.log('Metadata loaded for:', audio.src, 'Duration:', audio.duration);
                 });
                 
                 audio.addEventListener('ended', () => {
@@ -680,9 +637,6 @@
                         if (!audio.paused) {
                             trackPositions[audio.src] = audio.currentTime;
                         }
-                        console.log('Progress:', progressPercent.toFixed(2) + '%');
-                    } else {
-                        console.log('Duration not available yet');
                     }
                 });
             });
@@ -705,22 +659,12 @@
                         audio.currentTime = newTime;
                         // Save the new position
                         trackPositions[audio.src] = newTime;
-                        console.log('Seeked to:', (clickPercent * 100).toFixed(2) + '%');
                     }
                 });
             });
 
             // Update progress bars for all tracks based on saved positions
             // This ensures visual accuracy even when tracks aren't playing
-            setInterval(() => {
-                allAudioElements.forEach(audio => {
-                    if (audio.paused && trackPositions[audio.src] !== undefined && audio.duration) {
-                        const progressBar = audio.closest('.track-item').querySelector('.progress-bar');
-                        const progressPercent = (trackPositions[audio.src] / audio.duration) * 100;
-                        progressBar.style.width = `${progressPercent}%`;
-                    }
-                });
-            }, 1000); // Update every second
         });
     </script>
 </body>
